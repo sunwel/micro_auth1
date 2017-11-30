@@ -22,10 +22,10 @@ authserver:
     # 获取密钥接口
     - /auth/secret
     - /customerOauth/**
-authcenter:
-  business:
-    resource:
-      - resourceId: bqxz
-        appId: wx3eda9d6833de1237
-        appKey: 93409f4b1d4bcf4261371cb21ec260c4
-        source: weichat
+  authcenter:
+      business:
+          resource:
+            - resourceId: bqxz
+              appId: wx3eda9d6833de1237
+              appKey: 93409f4b1d4bcf4261371cb21ec260c4
+              source: weichat

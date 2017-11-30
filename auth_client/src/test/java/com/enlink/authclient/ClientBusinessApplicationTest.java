@@ -5,12 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 
 /**
  * 客户端业务请求测试的启动类
  */
-@Import({ DemoAuthClientConfig.class })
 @ComponentScan(basePackages = { "com.enlink.authclient" })
 @SpringBootApplication
 public class ClientBusinessApplicationTest implements CommandLineRunner {
@@ -26,8 +24,9 @@ public class ClientBusinessApplicationTest implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//clientBusinessTest.testGetRandomInt();
-		//clientBusinessTest.testGetRandomLong();
-		clientBusinessTest.testGetSecretString();
+//		clientBusinessTest.testGetRandomInt();
+//		clientBusinessTest.testGetRandomLong();
+//		clientBusinessTest.testGetSecretString();
+		clientBusinessTest.getRandomPriv3();
 	}
 }

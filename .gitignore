@@ -37,3 +37,8 @@ auth_client_server/target/maven-status/maven-compiler-plugin/compile/default-com
 auth_client_server/target/auth_client_server-0.0.1-SNAPSHOT.jar
 auth_client_server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 auth_client_server/target/
+auth-starter/auth-spring-boot-starter.iml
+authclient-starter/authclient-spring-boot-starter.iml
+authclient-starter/target/
+auth-starter/target/
+auth-starter/auth-starter.iml
