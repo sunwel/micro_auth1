@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -19,7 +20,6 @@
         <module>auth_client</module>
         <module>auth_server</module>
         <module>auth_client_server</module>
-        <module>authclient-starter</module>
         <module>auth_center</module>
     </modules>
 
@@ -147,11 +147,6 @@
             <dependency>
                 <groupId>com.enlink.auth</groupId>
                 <artifactId>auth_client_server</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.enlink.auth</groupId>
-                <artifactId>authclient-spring-boot-starter</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

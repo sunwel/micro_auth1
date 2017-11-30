@@ -82,8 +82,24 @@
     </springProfile>
     <!--开发和测试环境: 打印控制台 -->
     <springProfile name="local, dev, test,h2">
+        <!--<appender name="FULL_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+        <!--&lt;!&ndash;日志文件输出的文件名,每天一个文件&ndash;&gt;-->
+        <!--<fileNamePattern>${LOG_PATH}/default.%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+        <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+        <!--<maxFileSize>50MB</maxFileSize>-->
+        <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+        <!--&lt;!&ndash;日志文件保留天数&ndash;&gt;-->
+        <!--<maxHistory>30</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+        <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>-->
+        <!--</encoder>-->
+        <!--</appender>-->
+        <!-- sql语句日志输出 -->
         <logger name="com.enlink" level="debug" additivity="false">
             <appender-ref ref="STDOUT"/>
+            <!--<appender-ref ref="FULL_LOG"/>-->
         </logger>
         <root level="info">
             <appender-ref ref="STDOUT"/>
@@ -92,6 +108,7 @@
 
     <!--beta环境: 输出日志文件 -->
     <springProfile name="beta">
+        <logger name="com.enlink" level="DEBUG" additivity="false"/>
         <root level="info">
             <appender-ref ref="FULL_LOG"/>
             <appender-ref ref="ERROR_LOG"/>
@@ -100,6 +117,7 @@
 
     <!--生产环境: 输出日志文件 -->
     <springProfile name="release">
+        <logger name="com.enlink" level="DEBUG" additivity="false"/>
         <root level="info">
             <appender-ref ref="FULL_LOG"/>
             <appender-ref ref="ERROR_LOG"/>

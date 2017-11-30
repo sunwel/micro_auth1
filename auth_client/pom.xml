@@ -15,10 +15,6 @@
             <artifactId>commons-codec</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
@@ -57,13 +53,6 @@
             <artifactId>spring-boot-starter</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- 关掉以避免循环依赖
-        <dependency>
-            <groupId>com.enlink.auth</groupId>
-            <artifactId>authclient-spring-boot-starter</artifactId>
-            <scope>test</scope>
-        </dependency>
-        -->
         <?SORTPOM RESUME?>
     </dependencies>
 </project>

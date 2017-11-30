@@ -64,7 +64,6 @@ public class CsSecretService implements ISecretService {
 			tryCount++;
 			try {
 				CodeMsgResult<List<String>> secretResult = tokenRestTemplate.getForObject(fullUrl, CodeMsgResult.class);
-				logger.info("密钥请求结果：errCode={}，errMsg={}", secretResult.getErrCode(), secretResult.getErrMsg());
 				secretFlag = secretResult.isSuccess();
 				if (secretFlag) {
 					this.secretList = secretResult.getResult();

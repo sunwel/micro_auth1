@@ -1,10 +1,8 @@
 server.port: 8088
 
-enlink:
-  # 授权中心服务端配置
-  authserver:
-    # 微服务名，必须配置
-    serverName: testServer
-    # 需要进行微服务Token检查的路径列表，根据需要配置
-    needMicroTokenCheckPaths:
-      - /test/**
+authserver:
+  # 微服务名，必须配置
+  serverName: testServer
+  # 需要进行微服务Token检查的路径列表，根据需要配置
+  needMicroTokenCheckPaths:
+    - /test/**

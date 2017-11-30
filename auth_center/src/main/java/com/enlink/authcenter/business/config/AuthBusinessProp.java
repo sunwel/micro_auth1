@@ -11,7 +11,7 @@ import java.util.Map;
  * Created by someone on 2017/11/8.
  */
 @Component
-@ConfigurationProperties(prefix = "enlink.authcenter.business")
+@ConfigurationProperties(prefix = "authcenter.business")
 public class AuthBusinessProp {
 
     public List<Map<String, String>> getResource() {

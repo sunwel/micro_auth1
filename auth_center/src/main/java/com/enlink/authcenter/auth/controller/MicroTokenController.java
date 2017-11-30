@@ -70,9 +70,6 @@ public class MicroTokenController {
 		chainLoginExecute(context);
 		// 获取微服务Token字符串
 		String microTokenStr = context.getMicroTokenStr();
-		if (StringUtils.isEmpty(microTokenStr)) {
-			return CodeMsgResult.failureResult(ResultStatusCodeEnum.ALGID_INVALID);
-		}
 		logger.info("token请求通过，授权中心返回token={}", microTokenStr);
 		logger.info("授权中心接受token请求，处理完成.....");
 		// 包装返回响应结果

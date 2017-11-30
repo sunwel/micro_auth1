@@ -3,26 +3,21 @@ package com.enlink.authclient;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
-
 /**
  * 客户端认证请求配置类
  * @author Timothy
  */
 @Component
-@ConfigurationProperties(prefix = "enlink.authclient")
+@ConfigurationProperties(prefix = "authclient")
 public class AuthClientProp {
 
 	/** 客户端ID，必须配置 */
-	@NotNull
 	private String clientId;
 
 	/** 客户端登录Key，必须配置 */
-	@NotNull
 	private String clientKey;
 
 	/** 授权中心基础地址，必须配置 */
-	@NotNull
 	private String authCenterBaseUrl;
 
 	/** 客户端微服务Token相关配置，一般使用默认值即可 */

@@ -1,19 +1,18 @@
 server.port: 8088
 
-enlink:
-  # 微服务相关配置
-  authserver:
-    # 服务名
-    serverName: micro_basecenter
-    # 需要进行微服务Token检查的路径列表，根据需要配置
-    needMicroTokenCheckPaths:
-      - /test/**
+# 微服务相关配置
+authserver:
+  # 服务名
+  serverName: test_server
+  # 需要进行微服务Token检查的路径列表，根据需要配置
+  needMicroTokenCheckPaths:
+    - /test/**
 
-  # 微服务消费者相关配置；因为微服务需要向微服务中心获取密钥，所以本身也是消费者
-  authclient:
-    # 客户端ID，等同于微服务名
-    client-id: ${enlink.authserver.serverName}
-    # 客户端Key
-    client-key: O&RgnV64ghvkXlXT
-    # 授权中心基础地址
-    authCenterBaseUrl: http://localhost:8080
+# 微服务消费者相关配置；因为微服务需要向微服务中心获取密钥，所以本身也是消费者
+authclient:
+  # 客户端ID，等同于微服务名
+  client-id: ${authserver.serverName}
+  # 客户端Key
+  client-key: test_server_key1
+  # 授权中心基础地址
+  authCenterBaseUrl: http://localhost:8080

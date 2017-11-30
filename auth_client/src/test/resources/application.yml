@@ -1,9 +1,8 @@
-enlink:
-  # 微服务客户端相关配置
-  authclient:
-    # 客户端ID
-    clientId: didu
-    # 客户端Key
-    clientKey: OKa*pLupl@9coPa6
-    # 授权中心基础地址
-    authCenterBaseUrl: http://localhost:8080
+# 微服务消费者相关配置
+authclient:
+  # 客户端ID
+  clientId: didu1
+  # 客户端Key
+  clientKey: didu_key1
+  # 授权中心基础地址
+  authCenterBaseUrl: http://localhost:8080
