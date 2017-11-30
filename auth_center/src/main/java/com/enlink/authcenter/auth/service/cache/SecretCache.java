@@ -29,8 +29,7 @@ public class SecretCache extends BaseCache<Integer, TlSecret> {
 	protected List<TlSecret> getAllValidDataFromDb() {
 		Wrapper<TlSecret> wrapper = new EntityWrapper<>();
 		wrapper.eq(TlSecret.STATUS, 1);
-		// 获取数据时，这里要进行排序
-		wrapper.orderBy(TlSecret.SECRET_ID, false);
+		wrapper.orderBy(TlSecret.SECRET_ID);
 		return secretService.selectList(wrapper);
 	}
 

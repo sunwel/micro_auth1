@@ -1,0 +1,4 @@
+logging.path: /www/java/log
+data.url: 10.117.208.65:3306
+data.username: root
+data.userpassword: richenlin

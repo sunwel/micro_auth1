@@ -27,7 +27,7 @@ public class CacheRefreshService {
 	 * fixedRateString: 每隔多长时间执行这个任务<br/>
 	 * initialDelayString: 首次执行这个任务的延时时间
 	 */
-	@Scheduled(fixedRateString = "${authcenter.auth.cacheRefreshFixedRate:60000}", initialDelayString = "${authcenter.auth.cacheRefreshFixedRate:60000}")
+	@Scheduled(fixedRateString = "#{@authcenterProp.cacheRefreshFixedRate}", initialDelayString = "#{@authcenterProp.cacheRefreshFixedRate}")
 	public void cacheScheduleRefresh() {
 		clientCache.refresh();
 		microserviceCache.refresh();
@@ -41,7 +41,7 @@ public class CacheRefreshService {
 	 * fixedRateString: 每隔多长时间执行这个任务<br/>
 	 * initialDelayString: 首次执行这个任务的延时时间
 	 */
-	@Scheduled(fixedRateString = "${authcenter.auth.cacheRefreshCheckFixedRate:5000}", initialDelayString = "${authcenter.auth.cacheRefreshCheckFixedRate:5000}")
+	@Scheduled(fixedRateString = "#{@authcenterProp.cacheRefreshCheckFixedRate}", initialDelayString = "#{@authcenterProp.cacheRefreshCheckFixedRate}")
 	public void cacheScheduleRefreshCheck() {
 		clientCache.checkRefresh();
 		microserviceCache.checkRefresh();

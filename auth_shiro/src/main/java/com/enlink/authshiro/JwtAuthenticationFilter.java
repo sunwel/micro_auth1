@@ -6,6 +6,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
 import org.apache.shiro.web.util.WebUtils;
@@ -64,22 +65,22 @@ public class JwtAuthenticationFilter extends AuthenticatingFilter {
 				loggedIn = executeLogin(request, response);
 			} catch (ExpiredJwtException e) {
 				logger.error(e.getMessage(), e);
-				CodeMsgResult<String> result = CodeMsgResult
-						.sucessResult(ResultStatusCodeEnum.MICROTOKEN_EXPIRED.getErrMsg());
+				CodeMsgResult<ResultStatusCodeEnum> result = CodeMsgResult
+						.failureResult(ResultStatusCodeEnum.MICROTOKEN_EXPIRED);
 				exceptionHandler(response, result);
 				return false;
 			} catch (Exception e) {
 				logger.error(e.getMessage(), e);
-				CodeMsgResult<String> result = CodeMsgResult
-						.sucessResult(ResultStatusCodeEnum.MICROTOKEN_INVALID.getErrMsg());
+				CodeMsgResult<ResultStatusCodeEnum> result = CodeMsgResult
+						.failureResult(ResultStatusCodeEnum.MICROTOKEN_INVALID);
 				exceptionHandler(response, result);
 				return false;
 			}
 		}
 
 		if (!loggedIn) {
-			CodeMsgResult<String> result = CodeMsgResult
-					.sucessResult(ResultStatusCodeEnum.MICROTOKEN_INVALID.getErrMsg());
+			CodeMsgResult<ResultStatusCodeEnum> result = CodeMsgResult
+					.failureResult(ResultStatusCodeEnum.MICROTOKEN_INVALID);
 			exceptionHandler(response, result);
 		}
 		return loggedIn;
@@ -91,7 +92,8 @@ public class JwtAuthenticationFilter extends AuthenticatingFilter {
 	 * @param result
 	 * @throws IOException
 	 */
-	private void exceptionHandler(ServletResponse response, CodeMsgResult<String> result) throws IOException {
+	private void exceptionHandler(ServletResponse response, CodeMsgResult<ResultStatusCodeEnum> result)
+			throws IOException {
 		// 统一使用FastJson
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
@@ -100,7 +102,7 @@ public class JwtAuthenticationFilter extends AuthenticatingFilter {
 
 	private boolean isJwtLogin(ServletRequest request) {
 		String authzHeader = getAuthzHeader(request);
-		return authzHeader != null;
+		return StringUtils.isNotEmpty(authzHeader);
 	}
 
 	private String getAuthzHeader(ServletRequest request) {

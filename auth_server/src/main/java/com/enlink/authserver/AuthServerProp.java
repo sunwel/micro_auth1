@@ -2,6 +2,8 @@ package com.enlink.authserver;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -10,10 +12,11 @@ import org.springframework.stereotype.Component;
  * @author Timothy
  */
 @Component
-@ConfigurationProperties(prefix = "authserver")
+@ConfigurationProperties(prefix = "enlink.authserver")
 public class AuthServerProp {
 
 	/** 微服务名，微服务系统必配字段 */
+	@NotNull
 	private String serverName;
 
 	/** 需要进行权限检查的路径集合 */
