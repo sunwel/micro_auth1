@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:/h2/schema-h2.sql
+    data: classpath:/h2/data-h2.sql
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: sa
+    platform: h2
+    initialize: true
+    continue-on-error: true
+h2:
+  console:
+    enabled: true
+    path: /console
+# auth_center本身是个微服务，因为它提供获取密钥和微信授权这样的服务
+authserver:
+  # 微服务名，必须配置
+  serverName: micro_auth
+  # 需要进行微服务Token检查的路径列表，根据需要配置
+  needMicroTokenCheckPaths:
+    # 获取密钥接口
+    - /auth/secret
+    - /customerOauth/**
+authcenter:
+  business:
+    resource:
+      - resourceId: bqxz
+        appId: wx3eda9d6833de1237
+        appKey: 93409f4b1d4bcf4261371cb21ec260c4
+        source: weichat

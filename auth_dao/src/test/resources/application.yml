@@ -1,0 +1,3 @@
+spring.profiles.active: mysql
+# 性能监测设定的数据库命令执行的合理最长时间
+mybatis.performance.maxTime: 5000

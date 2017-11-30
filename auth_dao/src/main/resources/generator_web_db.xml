@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- myBatis -->
+    <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="${mybatis.mapper-locations}"/>
+        <property name="configLocation" value="${mybatis.config-location}"/>
+        <property name="typeAliasesPackage" value="${mybatis.type-aliases-package}"/>
+        <!-- 全局配置注入 -->
+        <property name="globalConfig" ref="globalConfig"/>
+        <property name="plugins">
+            <list>
+                <bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+        <!-- AUTO->`0`("数据库ID自增"), INPUT->`1`(用户输入ID"), ID_WORKER->`2`("全局唯一ID"), UUID->`3`("全局唯一ID") -->
+        <property name="idType" value="1"/>
+    </bean>
+
+</beans>

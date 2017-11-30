@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.enlink.auth.dao.mapper.TlClientMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.enlink.auth.dao.entity.TlClient">
+		<id column="client_id" property="clientId" />
+		<result column="client_key1" property="clientKey1" />
+		<result column="client_key2" property="clientKey2" />
+		<result column="client_type" property="clientType" />
+		<result column="client_desc" property="clientDesc" />
+		<result column="client_status" property="clientStatus" />
+	</resultMap>
+
+</mapper>

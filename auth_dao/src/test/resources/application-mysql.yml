@@ -1,0 +1,17 @@
+mybatis:
+    config-location: classpath:mybatis-config.xml
+    mapper-locations: classpath*:com/enlink/auth/dao/mapper/xml/*Mapper.xml
+    type-aliases-package: com.enlink.auth.dao.entity
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/micro_auth?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+        username: myuser
+        password: mypassword
+        tomcat:
+            max-active: 20
+            max-idle: 10
+            min-idle: 1
+            test-on-borrow: true
+            test-while-idle: true
+            validation-query: select 1

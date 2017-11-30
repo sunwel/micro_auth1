@@ -1,0 +1,18 @@
+mybatis:
+    config-location: classpath:mybatis-config.xml
+    mapper-locations: classpath*:com/enlink/auth/dao/mapper/xml/*Mapper.xml
+    type-aliases-package: com.enlink.auth.dao.entity
+spring:
+    datasource:
+        schema: classpath:/h2/schema-h2.sql
+        data: classpath:/h2/data-h2.sql
+        url: jdbc:h2:mem:testdb
+        username: sa
+        password: sa
+        platform: h2
+        initialize: true
+        continue-on-error: true
+h2:
+    console:
+        enabled: true
+        path: /console
