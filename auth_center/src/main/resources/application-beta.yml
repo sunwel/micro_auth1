@@ -3,3 +3,7 @@ data.url: 120.55.98.151:3306
 #10.117.208.65:3306
 data.username: root
 data.userpassword: richenlin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.12.200:8074

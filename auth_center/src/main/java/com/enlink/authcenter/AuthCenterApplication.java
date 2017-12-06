@@ -6,6 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
@@ -22,6 +23,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 @ComponentScan(basePackages = { "com.enlink.authcenter", "com.enlink.auth.dao", "com.enlink.authshiro",
 		"com.enlink.authserver" })
 @EnableScheduling
+@EnableEurekaClient
 @SpringBootApplication
 public class AuthCenterApplication {
 

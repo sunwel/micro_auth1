@@ -81,7 +81,7 @@
         </appender>
     </springProfile>
     <!--开发和测试环境: 打印控制台 -->
-    <springProfile name="local, dev, test,h2">
+    <springProfile name="local, dev, test,h2,default">
         <logger name="com.enlink" level="debug" additivity="false">
             <appender-ref ref="STDOUT"/>
         </logger>

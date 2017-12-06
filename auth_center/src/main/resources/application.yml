@@ -25,6 +25,8 @@ spring:
       test-on-borrow: true
       test-while-idle: true
       validation-query: select 1
+  application:
+    name: ${enlink.authserver.serverName}
 
 # auth_center本身是个微服务，因为它提供获取密钥和微信授权这样的服务
 enlink:
@@ -46,3 +48,8 @@ enlink:
           appId: wx88a1f4cc15c46d16
           appKey: 42d58166dc405d70b78944a5311f7204
           source: weichat
+#服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8074
