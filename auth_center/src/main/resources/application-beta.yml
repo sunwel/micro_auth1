@@ -6,4 +6,4 @@ data.userpassword: richenlin
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.12.200:8074
+      defaultZone: http://192.168.12.200:8074/eureka/
