@@ -52,4 +52,4 @@ enlink:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8074
+      defaultZone: http://localhost:8074/eureka/
